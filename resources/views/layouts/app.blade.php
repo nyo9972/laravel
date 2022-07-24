@@ -1,6 +1,15 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet"/>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script src="jquery.gridly/javascripts/jquery.gridly.js" type="text/javascript"></script>
+<link href="jquery.gridly/stylesheets/jquery.gridly.css" rel="stylesheet" type="text/css" />
+<script src="src/index.js"></script>
+<script>
+    import { Grid } from "gridjs" ;
+    import "gridjs/dist/theme/mermaid.css" ;
+</script>
 <!------ Include the above in your HEAD tag ---------->
 @if(Auth::user())
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">

@@ -57,7 +57,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Não tem uma conta?<a href="#">Criar</a>
+                        Não tem uma conta?<a href="{{ route('register') }}">Criar</a>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a class="btn btn-link" href="{{ route('password.request') }}">

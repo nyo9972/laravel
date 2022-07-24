@@ -75,7 +75,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Já tem uma conta?<a href="#">Entrar</a>
+                        Já tem uma conta?<a href="{{ route('login') }}">Entrar</a>
                     </div>
                 </div>
             </div>
