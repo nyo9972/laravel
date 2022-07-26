@@ -3,13 +3,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet"/>
 <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
-<script src="jquery.gridly/javascripts/jquery.gridly.js" type="text/javascript"></script>
-<link href="jquery.gridly/stylesheets/jquery.gridly.css" rel="stylesheet" type="text/css" />
-<script src="src/index.js"></script>
-<script>
-    import { Grid } from "gridjs" ;
-    import "gridjs/dist/theme/mermaid.css" ;
-</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!------ Include the above in your HEAD tag ---------->
 @if(Auth::user())
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
@@ -31,14 +25,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-bell">
-                        <span class="badge badge-info">11</span>
+                        <span class="badge badge-info">{{count(Auth::user()->getNotification())}}</span>
                     </i>
                     Notificações
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}">
-                        Texto da notificação
+                        @forelse(Auth::user()->getNotification() as $notification)
+                        <a class="dropdown-item" onclick="viewNotification({{$notification->id}}, '{{$notification->action_url}}')">{{$notification->text}}
+                        @empty
+                                <div align="center"> Nada por aqui... </div>
+                        @endforelse
                     </a>
                 </div>
             </li>
@@ -72,6 +69,26 @@
 <main class="py-4">
     @yield('content')
 </main>
+<script>
+    function viewNotification(notificationId, action){
+console.log(action)
+        $.ajax({
+            url: "{{Route('viewNotification')}}",
+            method: "POST",
+            data: { 'notificationId': notificationId },
+            success: () => {
+                window.location.href = action;
+            },
+            error: (erro) => {
+                swal.fire(
+                    'Erro!',
+                    'Erro ao visualizar notificação!',
+                    'error'
+                )
+            },
+        });
+    }
+</script>
 <style>
     @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 .navbar{

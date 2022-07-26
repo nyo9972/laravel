@@ -19,3 +19,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::post('/viewNotification', [App\Http\Controllers\Notification::class, 'viewNotification'])->name('viewNotification');
+

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -9,24 +8,6 @@
                 <div class="card-body">
                     <body>
                         <div id="wrapper"></div>
-                    </body>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header bg-secondary">GridStack.js</div>
-                <div class="card-body">
-                    <body>
-                    <div class="gridly">
-                        <div class="brick small">teste1</div>
-                        <div class="brick small">teste2</div>
-                        <div class="brick large">teste3</div>
-                        <div class="brick small">teste4</div>
-                        <div class="brick small">teste5</div>
-                        <div class="brick large">teste6</div>
-                    </div>
                     </body>
                 </div>
             </div>
@@ -64,28 +45,5 @@
         }
     }).render(document.getElementById("wrapper"));
 
-    $('.gridly').gridly({
-        base: 60, // px
-        gutter: 20, // px
-        columns: 12
-    });
 </script>
-
-<style type="text/css">
-    .gridly {
-        position: relative;
-        width: 960px;
-    }
-    .brick.small {
-        width: 140px;
-        height: 140px;
-    }
-    .brick.large {
-        width: 300px;
-        height: 300px;
-    }
-    .brick{
-        border: 5px solid;
-    }
-</style>
 @endsection
