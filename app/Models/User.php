@@ -20,6 +20,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'image',
         'name',
         'email',
         'password',
@@ -44,7 +45,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
+    //Add notification to Auth parameters
     public function getNotification()
     {
         return Notification::where('user_id', Auth::user()->id)->get();

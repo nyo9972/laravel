@@ -15,35 +15,39 @@
     </div>
 </div>
 <script>
-    new gridjs.Grid({
-        language: {
-            'search': {
-                'placeholder': 'Procurar...'
-            },
-            'pagination': {
-                'previous': '<️',
-                'next': '>',
-                'showing': 'Mostrando',
-                'results': () => 'Encontrados'
-            }
+    $.ajax({
+        url: "{{route('grid')}}",
+        method: "GET",
+        success: (data) => {
+            new gridjs.Grid({
+                language: {
+                    'search': {
+                        'placeholder': 'Procurar...'
+                    },
+                    'pagination': {
+                        'previous': '<️',
+                        'next': '>',
+                        'showing': 'Mostrando',
+                        'results': () => 'Encontrados'
+                    }
+                },
+                columns: ["Name", "Email"],
+                data: data,
+                search: {
+                    enabled: true
+                },
+                pagination: {
+                    enabled: true,
+                    limit: 10,
+                    summary: false
+                }
+            }).render(document.getElementById("wrapper"));
         },
-        columns: ["Name", "Email", "Phone Number"],
-        data: [
-            ["John", "john@example.com", "(353) 01 222 3333"],
-            ["Mark", "mark@gmail.com", "(01) 22 888 4444"],
-            ["Eoin", "eoin@gmail.com", "0097 22 654 00033"],
-            ["Sarah", "sarahcdd@gmail.com", "+322 876 1233"],
-            ["Afshin", "afshin@mail.com", "(353) 22 87 8356"]
-        ],
-        search: {
-            enabled: true
+        error: () => {
+            console.error("Server error, check your response");
         },
-        pagination: {
-            enabled: true,
-            limit: 10,
-            summary: false
-        }
-    }).render(document.getElementById("wrapper"));
+    });
+
 
 </script>
 @endsection

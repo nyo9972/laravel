@@ -12,12 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Home Routes
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/viewNotification', [App\Http\Controllers\Notification::class, 'viewNotification'])->name('viewNotification');
+Route::get('/grid', [App\Http\Controllers\HomeController::class, 'grid'])->name('grid');
 
+
+//User Routes
+Route::get('/configuration', [App\Http\Controllers\User::class, 'configuration'])->name('configuration');
+Route::post('/upload', [App\Http\Controllers\User::class, 'upload'])->name('upload');
