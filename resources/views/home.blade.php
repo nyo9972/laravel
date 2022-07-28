@@ -2,18 +2,19 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header bg-secondary">Grid.js</div>
-                <div class="card-body">
-                    <body>
-                        <div id="wrapper"></div>
-                    </body>
-                </div>
-            </div>
-        </div>
+{{--        <div class="col-md-12">--}}
+{{--            <div class="card">--}}
+{{--                <div class="card-header bg-secondary">Grid.js</div>--}}
+{{--                <div class="card-body">--}}
+{{--                    <body>--}}
+{{--                        <div id="wrapper"></div>--}}
+{{--                    </body>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 </div>
+
 <script>
     $.ajax({
         url: "{{route('grid')}}",

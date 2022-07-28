@@ -1,4 +1,4 @@
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet"/>
@@ -17,11 +17,11 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse ml-4" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('home')}}">
-                    <i class="fab fa-laravel"></i>
+                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/50px-Laravel.svg.png">
                     Laravel
                     <span class="sr-only">(current)</span>
                 </a>
@@ -31,12 +31,10 @@
         <ul class="navbar-nav dropdown">
 
             <li class="nav-item">
-
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-bell">
                         <span class="badge badge-info">{{count(Auth::user()->getNotification())}}</span>
                     </i>
-                    Notificações
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -47,16 +45,12 @@
                         @endforelse
                     </a>
                 </div>
-
             </li>
 
-            <li class="nav-item dropdown">
-
+            <li class="nav-item dropdown mr-4">
                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="{{asset('/storage/images/'.Auth::user()->image)}}" class="avatar-md rounded-circle" style="width: 50px; height: 50px" alt="Avatar" />
-                    <i>
                         {{ Auth::user()->name }}
-                    </i>
+                    <img src="{{asset('/storage/images/'.Auth::user()->image)}}" class="avatar-md rounded-circle" style="width: 50px; height: 50px" alt="Avatar" />
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="right: 0; left: auto; text-align: center;">
@@ -86,8 +80,9 @@
 <main class="py-4">
     @yield('content')
 </main>
-
-<script>
+<div class="chat-mini">
+    @include('vendor/Chatify/mini-chat')
+</div><script>
     function viewNotification(notificationId, action){
         $.ajax({
             url: "{{Route('viewNotification')}}",
