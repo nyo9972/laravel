@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Response;
 
 class HomeController extends Controller
@@ -24,13 +26,15 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(!Auth::user()->birthday){
+            return redirect(Route('configuration'));
+        }else{
+            return view('home', [
+                'users' => $users = \App\Models\User::all()
+            ]);
+        }
 
-        return view('home');
     }
 
-    public function grid()
-    {
-        $users = \App\Models\User::all();
-       return Response::json($users);
-    }
+
 }

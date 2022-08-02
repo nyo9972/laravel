@@ -14,11 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 //Home Routes
 Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', function (){
+    return redirect('/chatify');
+})->name('home');
+
+Route::get('/home', function (){
+    return redirect('/chatify');
+})->name('home');
+
 Route::post('/viewNotification', [App\Http\Controllers\Notification::class, 'viewNotification'])->name('viewNotification');
 Route::get('/grid', [App\Http\Controllers\HomeController::class, 'grid'])->name('grid');
-
 
 //User Routes
 Route::get('/configuration', [App\Http\Controllers\User::class, 'configuration'])->name('configuration');

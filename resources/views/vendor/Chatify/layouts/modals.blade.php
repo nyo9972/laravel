@@ -69,9 +69,20 @@
                       </div>
                   </div>
                   <div class="app-modal-footer">
-                      <a href="javascript:void(0)" class="app-btn cancel">Cancelar</a>
-                      <input type="submit" class="app-btn a-btn-success update" value="Save Changes" />
+                      <a href="javascript:void(0)" class="btn btn-danger">Cancelar</a>
+                      <input type="submit" class="app-btn a-btn-success update" value="Salvar altereções" />
                   </div>
+                  <br>
+                  <div class="row">
+                      <a class="app-btn a-btn-danger" href="{{ route('logout') }}"
+                         onclick="event.preventDefault(); $( '#logout-form' ).submit();">
+                          Sair
+                      </a>
+                  </div>
+              </form>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
               </form>
           </div>
       </div>

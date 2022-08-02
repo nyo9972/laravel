@@ -24,6 +24,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar',
+        'background',
+        'description',
+        'favourite_bands',
+        'favourite_movies',
+        'hobbies',
+        'profession',
+        'height',
+        'birthday',
+        'active_status',
+        'messenger_color',
+        'dark_mode',
     ];
 
     /**

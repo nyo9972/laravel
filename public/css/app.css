@@ -1,0 +1,155 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.card-header{
+    color:white;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: rgba(0, 0, 0, 0.00) !important;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    z-index: 0;
+}
+
+.card{
+    color:white;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: rgba(0, 0, 0, 0.25) !important;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    z-index: 0;
+}
+
+.navbar{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 68px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    z-index: 9999999;
+}
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+    color:white;
+    position: relative;
+    width: 36px;
+    font-size: 24px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+    font-size: 0.75rem;
+    position: absolute;
+    right: 0;
+    font-family: sans-serif;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+    top: 3px;
+    line-height: 12px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+    top: -10px;
+}
+
+
+
+
+/*grid style*/
+.gridjs-search-input{
+    background: rgba(0, 0, 0, 0.25)!important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+    backdrop-filter: blur(6.9px)!important;
+    -webkit-backdrop-filter: blur(6.9px)!important;
+    border: 1px solid rgba(0, 0, 0, 0.50)!important;
+    color: white !important;
+}::placeholder{
+     color: #e5e5e5;
+ }
+
+.gridjs-th{
+    background: rgba(0, 0, 0, 0.25)!important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+    backdrop-filter: blur(6.9px)!important;
+    -webkit-backdrop-filter: blur(6.9px)!important;
+    border: 1px solid rgba(0, 0, 0, 0.50)!important;
+    color: white;
+}
+
+.gridjs-tbody, td.gridjs-td{
+    background: rgba(0, 0, 0, 0.25)!important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+    backdrop-filter: blur(6.9px)!important;
+    -webkit-backdrop-filter: blur(6.9px)!important;
+    border: 1px solid rgba(0, 0, 0, 0.50)!important;
+    color: white;
+}
+
+.gridjs-td{
+    background: rgba(0, 0, 0, 0.0) !important;
+}
+
+.gridjs-tr{
+    background: rgba(0, 0, 0, 0.0) !important;
+}
+
+.gridjs-footer{
+    background: rgba(0, 0, 0, 0.50) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(6.9px) !important;
+    -webkit-backdrop-filter: blur(6.9px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.50) !important;
+    color: white;
+}
+
+.gridjs-th-content{
+    color: white !important;
+}
+
+.gridjs-pages button{
+    background: rgba(0, 0, 0, 0.25) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(6.9px) !important;
+    -webkit-backdrop-filter: blur(6.9px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.50) !important;
+    color: white;
+}
+
+.gridjs-wrapper{
+    background: rgba(0, 0, 0, 0.25) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(6.9px) !important;
+    -webkit-backdrop-filter: blur(6.9px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.50) !important;
+    color: white;
+}
+
+.input-glass{
+    background: rgba(0, 0, 0, 0.25)!important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+    backdrop-filter: blur(6.9px)!important;
+    -webkit-backdrop-filter: blur(6.9px)!important;
+    border: 1px solid rgba(0, 0, 0, 0.50)!important;
+    color: white !important;
+}::placeholder{
+     color: #e5e5e5;
+ }
+

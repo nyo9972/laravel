@@ -6,7 +6,7 @@
         {{-- Header and search bar --}}
         <div class="m-header">
             <nav>
-                <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">Mensagens</span> </a>
+                <a href="#"><span class="messenger-headTitle">Mensagens</span> </a>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#"><i class="fas fa-cog settings-btn"></i></a>
@@ -16,12 +16,12 @@
             {{-- Search input --}}
             <input type="text" class="messenger-search" placeholder="Buscar..." />
             {{-- Tabs --}}
-{{--            <div class="messenger-listView-tabs">--}}
-{{--                <a href="#" @if($type == 'user') class="active-tab" @endif data-view="users">--}}
-{{--                    <span class="far fa-user"></span> Pessoas</a>--}}
-{{--                <a href="#" @if($type == 'group') class="active-tab" @endif data-view="groups">--}}
-{{--                    <span class="fas fa-users"></span> Groups</a>--}}
-{{--            </div>--}}
+            <div class="messenger-listView-tabs">
+                <a href="#" @if($type == 'user') class="active-tab" @endif data-view="users">
+                    <span class="far fa-user"></span> Pessoas</a>
+                <a href="#" @if($type == 'group') class="active-tab" @endif data-view="groups">
+                    <span class="fas fa-users"></span> Todas as pessoas</a>
+            </div>
         </div>
         {{-- tabs and lists --}}
         <div class="m-body contacts-container">
@@ -47,7 +47,7 @@
            <div class="@if($type == 'group') show @endif messenger-tab groups-tab app-scroll" data-view="groups">
                 {{-- items --}}
                 <p style="text-align: center;color:grey;margin-top:30px">
-                    <a target="_blank" style="color:{{$messengerColor}};" href="https://chatify.munafio.com/notes#groups-feature">Click here</a> for more info!
+                    Logo estará disponivel!
                 </p>
              </div>
 

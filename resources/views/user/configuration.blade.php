@@ -16,7 +16,7 @@
     </head>
     <body>
     <div class="container">
-        <div class="d-flex justify-content-center h-100">
+        <div class=" col-md-16">
             <div class="card">
                 <div class="card-header">
                     <h3>Perfil</h3>
@@ -24,32 +24,90 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('upload') }}" enctype="multipart/form-data">
 
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <div class="row">
+                            <div class="input-group form-group col-md-6">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" placeholder="Nome" required autocomplete="name" autofocus>
                             </div>
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" placeholder="Nome" required autocomplete="name" autofocus>
-                        </div>
 
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                            </div>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" placeholder="E-mail" required autocomplete="email">
+                            <div class="input-group form-group col-md-6">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" placeholder="E-mail" required autocomplete="email">
 
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                            @enderror
+                                @enderror
+                            </div>
                         </div>
 
-                        <div class="input-group form-group">
-                            <div class="row col-md-7">
-                                <input class="form-control" id="image" onchange="loadFile(event)" style="max-width: 160px" type="file" name="image">
+                        <div class="row">
+                            <div class="input-group form-group col-md-6">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-music"></i></span>
+                                </div>
+                                <input id="favourite_bands" type="text" class="form-control" name="favourite_bands" value="{{ $user->favourite_bands }}" placeholder="Diz aí, quais suas bandas favoritas?" required autocomplete="favourite_bands">
                             </div>
-                            <div class="row">
-                                <img  id="output" src="{{asset('/storage/images/'.Auth::user()->image)}}" alt="imagem"  class="ml-4 avatar-md rounded-circle" style="width: 110px; height: 90px" alt="Avatar" />
+
+                            <div class="input-group form-group col-md-6">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-film"></i></span>
+                                </div>
+                                <input id="favourite_movies" type="text" class="form-control" name="favourite_movies" value="{{ $user->favourite_movies }}" placeholder="Agora me diz, quais seus filmes preferidos?" required autocomplete="favourite_movies">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-group form-group col-md-6">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-trophy"></i></span>
+                                </div>
+                                <input id="hobbies" type="text" class="form-control" name="hobbies" value="{{ $user->hobbies }}" placeholder="Quais são seus hobbies?" autocomplete="hobbies">
+                            </div>
+
+                            <div class="input-group form-group col-md-6">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+                                </div>
+                                <input id="profession" type="text" class="form-control" name="profession" value="{{ $user->profession }}" placeholder="Qual sua profissão?" autocomplete="profession">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="birthday">
+                                    Data de nascimento
+                                </label>
+                                <div class="input-group form-group">
+                                    <input id="birthday" type="date" class="form-control" name="birthday" value="{{ $user->birthday }}" placeholder="Agora me diz, quais seus filmes preferidos?" required autocomplete="birthday">
+                                </div>
+                            </div>
+
+                            <div class="input-group form-group col-md-6">
+                                <textarea id="description"  class="form-control" name="description" placeholder="Use esse espaço para falar um pouco sobre você!" autocomplete="description">{{ $user->description }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-group form-group col-md-6">
+                                    <input class="form-control" id="avatar" onchange="loadFile(event)" style="max-width: 140px; border-radius: 40px; display: none" type="file" name="avatar">
+                                <label for="avatar"><span class="btn btn-primary">Escolha uma foto de perfil</span></label>
+                                <div class="row">
+                                    <img  id="output" src="{{asset('/storage/users-avatar/'.Auth::user()->avatar)}}" alt="imagem"  class="ml-4 avatar-md rounded-circle" style="width: 110px; height: 90px" alt="Avatar" />
+                                </div>
+                            </div>
+
+                            <div class="input-group form-group col-md-6">
+                                <input class="form-control" id="background" onchange="loadFileBackground(event)" style="max-width: 140px; border-radius: 40px; display: none" type="file" name="background">
+                                <label for="background"><span class="btn btn-primary">Escolha uma foto de capa</span></label>
+                                <div class="row">
+                                    <img  id="outputbg" src="{{asset('/storage/background/'.Auth::user()->background)}}" alt="imagem"  class="ml-4 avatar-md rounded-circle" style="width: 110px; height: 90px" alt="background" />
+                                </div>
                             </div>
                         </div>
 
@@ -73,6 +131,14 @@
                 URL.revokeObjectURL(output.src)
             }
         };
+
+        var loadFileBackground = function(event) {
+            var output = document.getElementById('outputbg');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+                URL.revokeObjectURL(output.src)
+            }
+        };
     </script>
 
     <style>
@@ -88,68 +154,9 @@
             font-family: 'Numans', sans-serif;
         }
 
-        .container{
-            height: 100%;
-            align-content: center;
-        }
-
-        .card{
-            height: 370px;
-            margin-top: auto;
-            margin-bottom: auto;
-            width: 400px;
-            background-color: rgba(0,0,0,0.5) !important;
-        }
-
-        .social_icon span{
-            font-size: 60px;
-            margin-left: 10px;
-            color: #FFC312;
-        }
-
-        .social_icon span:hover{
-            color: white;
-            cursor: pointer;
-        }
-
-        .card-header h3{
-            color: white;
-        }
-
-        .social_icon{
-            position: absolute;
-            right: 20px;
-            top: -45px;
-        }
-
-        .input-group-prepend span{
-            width: 50px;
-            background-color: #FFC312;
-            color: black;
-            border:0 !important;
-        }
-
-        input:focus{
-            outline: 0 0 0 0  !important;
-            box-shadow: 0 0 0 0 !important;
-
-        }
-
-        .remember{
-            color: white;
-        }
-
-        .remember input
-        {
-            width: 20px;
-            height: 20px;
-            margin-left: 15px;
-            margin-right: 5px;
-        }
-
         .login_btn{
             color: black;
-            background-color: #FFC312;
+            background-color: #bdbcc0;
             width: 100px;
         }
 

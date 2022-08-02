@@ -95,17 +95,6 @@
             background-color: rgba(0,0,0,0.5) !important;
         }
 
-        .social_icon span{
-            font-size: 60px;
-            margin-left: 10px;
-            color: #FFC312;
-        }
-
-        .social_icon span:hover{
-            color: white;
-            cursor: pointer;
-        }
-
         .card-header h3{
             color: white;
         }
@@ -114,13 +103,6 @@
             position: absolute;
             right: 20px;
             top: -45px;
-        }
-
-        .input-group-prepend span{
-            width: 50px;
-            background-color: #FFC312;
-            color: black;
-            border:0 !important;
         }
 
         input:focus{
@@ -143,7 +125,7 @@
 
         .login_btn{
             color: black;
-            background-color: #FFC312;
+            background-color: #bdbcc0;
             width: 100px;
         }
 
