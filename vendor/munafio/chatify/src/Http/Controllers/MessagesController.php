@@ -271,7 +271,7 @@ class MessagesController extends Controller
 
         $usersList =$users->items();
 
-        if ($usersList) {
+        if (count($usersList) > 0) {
             $contacts = '';
             foreach ($usersList as $user) {
                 $contacts .= Chatify::getContactItem($user);
