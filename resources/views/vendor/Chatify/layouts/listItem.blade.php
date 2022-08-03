@@ -39,7 +39,7 @@
             {{-- Last Message user indicator --}}
             {!!
                 $lastMessage->from_id == Auth::user()->id
-                ? '<span class="lastMessageIndicator">You :</span>'
+                ? '<span class="lastMessageIndicator">Você :</span>'
                 : ''
             !!}
             {{-- Last message body --}}

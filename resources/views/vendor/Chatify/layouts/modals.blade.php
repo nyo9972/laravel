@@ -69,7 +69,7 @@
                       </div>
                   </div>
                   <div class="app-modal-footer">
-                      <a href="javascript:void(0)" class="btn btn-danger">Cancelar</a>
+                      <a onclick="window.location.reload()" class="app-btn a-btn-warning">Cancelar</a>
                       <input type="submit" class="app-btn a-btn-success update" value="Salvar altereções" />
                   </div>
                   <br>
